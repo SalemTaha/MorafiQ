@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>خدمة النقل لذوي الهمم | MorafiQ</title>
+
+    <!-- Favicon for Desktop and Other Browsers -->
+    <link rel="icon" type="image/png" href="./images/morafiq-logo.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="./images/morafiq-logo.png" sizes="16x16">
+
+    <!-- iOS Safari Icons -->
+    <link rel="apple-touch-icon" href="./images/morafiq-logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./images/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./images/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./images/apple-touch-icon-76x76.png">
+
+    <!-- Android Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="./images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./images/android-chrome-512x512.png">
+
+    <!-- High-Resolution Icons (Retina) -->
+    <link rel="icon" type="image/png" href="./images/morafiq-logo.png" sizes="64x64">
+    <link rel="icon" type="image/png" href="./images/morafiq-logo.png" sizes="48x48">
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            direction: rtl;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #009688;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 5px solid #00796b;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3.8em;
+            margin: 10px 0;
+            font-weight: bold;
+            letter-spacing: 4px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-weight: 300;
+        }
+
+        /* Main Content Section */
+        .container {
+            padding: 50px 20px;
+        }
+
+        /* Section Titles */
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #00796b;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: #009688;
+            color: white;
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #00796b;
+            transform: translateY(-4px);
+        }
+
+        /* Form Section */
+        .form-container {
+            background-color: white;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            margin: 25px auto;
+            max-width: 700px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .form-container:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container select,
+        .form-container input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1.1em;
+            transition: border 0.3s ease;
+        }
+
+        .form-container input[type="text"]:focus,
+        .form-container input[type="email"]:focus,
+        .form-container select:focus,
+        .form-container input[type="password"]:focus {
+            border-color: #00796b;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #009688;
+            color: white;
+            border: none;
+            padding: 16px 24px;
+            width: 100%;
+            font-size: 1.3em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #00796b;
+        }
+
+        /* Feature Section */
+        .feature {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .feature div {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(33.333% - 30px);
+            text-align: center;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .feature div:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature div h3 {
+            color: #00796b;
+            font-size: 1.7em;
+            margin-bottom: 20px;
+        }
+
+        .feature div p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #00796b;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 5px solid #004d40;
+            font-size: 1.1em;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #004d40;
+        }
+
+        footer .social-links {
+            margin-top: 20px;
+        }
+
+        footer .social-links a {
+            margin: 0 10px;
+            font-size: 1.5em;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media screen and (max-width: 768px) {
+            .feature {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature div {
+                flex: 1 1 100%;
+                margin-bottom: 20px;
+            }
+
+            .form-container {
+                max-width: 100%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>MorafiQ</h1>
+        <p>نحن هنا لتسهيل تنقلاتك! خدمة آمنة ومريحة لأشخاص ذوي الإعاقة الحركية.</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Intro Section -->
+        <h2>نقدم لك أفضل تجربة تنقل، أينما كنت.</h2>
+        <p style="text-align: center;">سواء كنت تحتاج إلى سيارة مجهزة لذوي الإعاقة الحركية أو مساعدات خاصة، نحن هنا لضمان راحتك.</p>
+        <div style="text-align: center;">
+            <a href="#services" class="btn">اكتشف المزيد</a>
+        </div>
+
+        <!-- Feature Section -->
+        <div class="feature" id="services">
+            <div>
+                <h3>حجز سيارة مخصصة</h3>
+                <p>اختر السيارة التي تناسب احتياجاتك الخاصة بسهولة.</p>
+                <a href="#booking-form" class="btn">حجز الآن</a>
+            </div>
+
+            <div>
+                <h3>مساعدة أثناء الرحلة</h3>
+                <p>سائقون مدربون لتوفير الدعم لك طوال الرحلة.</p>
+                <a href="#booking-form" class="btn">تعرف على المزيد</a>
+            </div>
+
+            <div>
+                <h3>تخصيص الخدمة</h3>
+                <p>اختر نوع المساعدة التي تحتاجها أو السيارة التي تناسبك.</p>
+                <a href="#booking-form" class="btn">التخصيص الآن</a>
+            </div>
+        </div>
+
+        <!-- Booking Form Section -->
+        <div class="form-container" id="booking-form">
+            <h2>حجز رحلة</h2>
+            <form action="#" method="POST" id="bookingForm">
+                <input type="text" name="name" id="name" placeholder="الاسم الكامل" required>
+                <input type="email" name="email" id="email" placeholder="البريد الإلكتروني" required>
+                <select name="car-type" id="car-type" required>
+                    <option value="" disabled selected>اختر نوع السيارة</option>
+                    <option value="wheelchair">سيارة مجهزة للكرسي المتحرك</option>
+                    <option value="standard">سيارة عادية</option>
+                </select>
+                <input type="submit" value="حجز الآن">
+            </form>
+        </div>
+
+        <!-- Registration Form Section -->
+        <div class="form-container">
+            <h2>التسجيل في الخدمة</h2>
+            <form action="#" method="POST" id="registerForm">
+                <input type="text" name="fullname" id="fullname" placeholder="الاسم الكامل" required>
+                <input type="email" name="email" id="registerEmail" placeholder="البريد الإلكتروني" required>
+                <input type="password" name="password" id="password" placeholder="كلمة المرور" required>
+                <input type="submit" value="تسجيل الحساب">
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2024 خدمة النقل لذوي الهمم | جميع الحقوق محفوظة</p>
+        <p>تواصل معنا عبر <a href="mailto:contact@morafiq.com">البريد الإلكتروني</a></p>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank">📘</a>
+            <a href="https://twitter.com" target="_blank">🐦</a>
+            <a href="https://instagram.com" target="_blank">📸</a>
+        </div>
+    </footer>
+
+    <script>
+        // On page load, populate the form fields with data from localStorage
+        window.onload = function() {
+            if(localStorage.getItem("bookingData")) {
+                const bookingData = JSON.parse(localStorage.getItem("bookingData"));
+                document.getElementById("name").value = bookingData.name || '';
+                document.getElementById("email").value = bookingData.email || '';
+                document.getElementById("car-type").value = bookingData.carType || '';
+            }
+
+            if(localStorage.getItem("registerData")) {
+                const registerData = JSON.parse(localStorage.getItem("registerData"));
+                document.getElementById("fullname").value = registerData.fullname || '';
+                document.getElementById("registerEmail").value = registerData.email || '';
+            }
+        }
+
+        // Store booking form data in localStorage
+        document.getElementById("bookingForm").addEventListener("submit", function(e) {
+            e.preventDefault(); // Prevent form submission
+            const formData = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                carType: document.getElementById("car-type").value
+            };
+            localStorage.setItem("bookingData", JSON.stringify(formData));
+            alert("تم حفظ البيانات بنجاح!");
+        });
+
+        // Store registration form data in localStorage
+        document.getElementById("registerForm").addEventListener("submit", function(e) {
+            e.preventDefault(); // Prevent form submission
+            const regData = {
+                fullname: document.getElementById("fullname").value,
+                email: document.getElementById("registerEmail").value
+            };
+            localStorage.setItem("registerData", JSON.stringify(regData));
+            alert("تم تسجيل بياناتك بنجاح!");
+        });
+    </script>
+
+</body>
+</html>

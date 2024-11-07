@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>إدارة البيانات | MorafiQ</title>
+
+    <!-- Favicon for Desktop and Other Browsers -->
+    <link rel="icon" type="image/png" href="./images/morafiq-logo.png" sizes="32x32">
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            direction: rtl;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #009688;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid #00796b;
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            margin: 0;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        /* Admin Section */
+        .container {
+            padding: 40px;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table th, table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #009688;
+            color: white;
+            font-size: 1.1em;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Button Style */
+        .btn {
+            display: inline-block;
+            background-color: #009688;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            text-align: center;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #00796b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>لوحة التحكم - إدارة البيانات</h1>
+        <p>عرض بيانات الحجز والتسجيل من المستخدمين</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2 style="text-align: center;">البيانات المجمعة من المستخدمين</h2>
+
+        <!-- Booking Form Data -->
+        <h3>بيانات الحجز</h3>
+        <table id="bookingTable">
+            <thead>
+                <tr>
+                    <th>الاسم الكامل</th>
+                    <th>البريد الإلكتروني</th>
+                    <th>نوع السيارة</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be populated by JavaScript -->
+            </tbody>
+        </table>
+
+        <!-- Registration Form Data -->
+        <h3>بيانات التسجيل</h3>
+        <table id="registrationTable">
+            <thead>
+                <tr>
+                    <th>الاسم الكامل</th>
+                    <th>البريد الإلكتروني</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be populated by JavaScript -->
+            </tbody>
+        </table>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="btn">العودة إلى الصفحة الرئيسية</a>
+        </div>
+    </div>
+
+    <script>
+        // Function to display booking data
+        function displayBookingData() {
+            const bookingData = JSON.parse(localStorage.getItem("bookingData"));
+            const bookingTable = document.getElementById("bookingTable").getElementsByTagName('tbody')[0];
+
+            if (bookingData) {
+                const row = bookingTable.insertRow();
+                row.insertCell(0).textContent = bookingData.name;
+                row.insertCell(1).textContent = bookingData.email;
+                row.insertCell(2).textContent = bookingData.carType;
+            }
+        }
+
+        // Function to display registration data
+        function displayRegistrationData() {
+            const registerData = JSON.parse(localStorage.getItem("registerData"));
+            const registrationTable = document.getElementById("registrationTable").getElementsByTagName('tbody')[0];
+
+            if (registerData) {
+                const row = registrationTable.insertRow();
+                row.insertCell(0).textContent = registerData.fullname;
+                row.insertCell(1).textContent = registerData.email;
+            }
+        }
+
+        // Load and display data when the page loads
+        window.onload = function() {
+            displayBookingData();
+            displayRegistrationData();
+        }
+    </script>
+
+</body>
+</html>
